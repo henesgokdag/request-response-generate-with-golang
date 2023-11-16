@@ -1,0 +1,22 @@
+{
+  "productId": 1,
+  "description": "123",
+  "name": "product name",
+  "isSellable": true,
+  "sellers": [
+    {
+      "sellerId": 1,
+      "sellerName": "seller1",
+      "price": 32
+    },
+    {
+      "sellerId": 2,
+      "sellerName": "seller2",
+      "price": 15
+    }
+  ],
+  "sellerPriceInfo": {
+    "1": 32,
+    "2": 15
+  }
+}

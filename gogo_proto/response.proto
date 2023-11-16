@@ -1,0 +1,49 @@
+syntax = "proto2";
+
+import "google/protobuf/descriptor.proto";
+extend google.protobuf.FieldOptions {
+  optional bool nullable = 65001;
+}
+
+message ProductResponse {
+  required int64 ProductId=1   [
+    (nullable) = false,
+    json_name = "productId"
+  ];
+
+  optional string description=2   [
+    (nullable) = true,
+    json_name = "description"
+  ];
+  required string name=3   [
+    (nullable) = false,
+    json_name = "name"
+  ];
+  required bool isSellable=4   [
+    (nullable) = false,
+    json_name = "isSellable"
+  ];
+  repeated Seller sellers=5   [
+    (nullable) = false,
+    json_name = "sellers"
+  ];
+  map<string, int32> sellerPriceInfo = 6 [
+    (nullable) = false,
+    json_name = "sellerPriceInfo"
+  ];
+}
+
+message Seller {
+  required int64 sellerId=1   [
+    (nullable) = false,
+    json_name = "sellerId"
+  ];
+  required string sellerName=2   [
+    (nullable) = false,
+    json_name = "sellerName"
+  ];
+  required int32 price=3   [
+    (nullable) = false,
+    json_name = "price"
+  ];
+}

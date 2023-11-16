@@ -1,0 +1,17 @@
+syntax = "proto2";
+package generated_go;
+
+message ProductResponse {
+  required int64 productId=1;
+  optional string description=2;
+  required string name=3;
+  required bool isSellable=4;
+  repeated Seller sellers=5;
+  map<string, int32> sellerPriceInfo=6;
+}
+
+message Seller {
+  required int64 sellerId=1;
+  required string sellerName=2;
+  required int32 price=3;
+}
